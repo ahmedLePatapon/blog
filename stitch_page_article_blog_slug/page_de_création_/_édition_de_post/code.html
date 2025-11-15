@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Post Editor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#3B82F6", // Muted Blue from description
+            "background-light": "#F9FAFB", // Light Gray from description
+            "background-dark": "#111827", // Dark blue-tinged gray from description
+            "text-light": "#111827",
+            "text-dark": "#F9FAFB",
+            "border-light": "#E5E7EB", // Light gray for borders
+            "border-dark": "#374151",
+            "input-light": "#FFFFFF",
+            "input-dark": "#1F2937",
+            "muted-light": "#6B7280",
+            "muted-dark": "#9CA3AF"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom switch styles */
+    .switch-checkbox:checked {
+      right: 2px;
+    }
+    .switch-checkbox:checked + .switch-bg {
+      background-color: #3B82F6; /* primary color */
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Header Bar -->
+<header class="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 md:px-8">
+<div class="flex items-center gap-4">
+<!-- Reusing ToolBar component -->
+<a class="flex cursor-pointer items-center justify-center gap-2 text-sm font-medium text-muted-light dark:text-muted-dark hover:text-text-light dark:hover:text-text-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+<span class="hidden sm:inline">Retour au dashboard</span>
+</a>
+</div>
+<div class="flex items-center gap-4">
+<!-- Reusing Chips component -->
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-border-light dark:bg-border-dark px-3">
+<p class="text-text-light dark:text-text-dark text-xs font-medium leading-normal">Brouillon</p>
+</div>
+<!-- Reusing ButtonGroup component -->
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-white dark:bg-input-dark text-sm font-medium leading-normal border border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-gray-700 transition-colors">
+<span class="truncate">Enregistrer</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal hover:bg-primary/90 transition-colors">
+<span class="truncate">Publier</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto p-4 md:p-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8">
+<!-- Left Column: Editor -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Title Field -->
+<div>
+<label class="sr-only" for="title">Titre</label>
+<input class="form-input w-full resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary border-none bg-transparent placeholder:text-muted-light dark:placeholder:text-muted-dark p-0 text-3xl md:text-4xl font-bold tracking-tight" id="title" placeholder="Titre de l'article..." value=""/>
+</div>
+<!-- Slug Field -->
+<div class="flex items-center rounded-lg bg-white dark:bg-input-dark border border-border-light dark:border-border-dark focus-within:ring-2 focus-within:ring-primary">
+<span class="px-3 text-sm text-muted-light dark:text-muted-dark">blog.com/</span>
+<label class="sr-only" for="slug">Slug</label>
+<input class="form-input flex-1 border-none bg-transparent p-3 text-sm text-text-light dark:text-text-dark placeholder:text-muted-light dark:placeholder:text-muted-dark focus:ring-0" id="slug" placeholder="url-de-l-article" value=""/>
+</div>
+<!-- Markdown Editor -->
+<div>
+<label class="sr-only" for="markdown-editor">Article Content</label>
+<textarea class="form-textarea w-full resize-y rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary border border-border-light dark:border-border-dark bg-white dark:bg-input-dark placeholder:text-muted-light dark:placeholder:text-muted-dark p-4 text-base leading-relaxed" id="markdown-editor" placeholder="Commencez à écrire votre article ici..." rows="20"></textarea>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="lg:col-span-1 space-y-8 mt-8 lg:mt-0">
+<!-- Status Section -->
+<div class="rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-input-dark p-5">
+<h3 class="text-sm font-semibold text-text-light dark:text-text-dark mb-4">Statut</h3>
+<div class="flex items-center justify-between">
+<label class="text-sm font-medium text-text-light dark:text-text-dark cursor-pointer" for="publish-toggle">Publié</label>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+<input class="absolute hidden" id="publish-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-border-light dark:bg-border-dark cursor-pointer" for="publish-toggle"></label>
+<div class="absolute left-1 top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200 ease-in-out peer-checked:translate-x-full peer-checked:bg-primary"></div>
+<button class="relative h-6 w-11 cursor-pointer appearance-none rounded-full border-2 border-transparent transition-colors focus:outline-none bg-border-light dark:bg-border-dark">
+<span class="pointer-events-none absolute left-0.5 top-0.5 inline-block h-5 w-5 transform rounded-full bg-white shadow-sm ring-0 transition-transform duration-200 ease-in-out translate-x-0"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Image Upload Section -->
+<div class="rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-input-dark p-5">
+<h3 class="text-sm font-semibold text-text-light dark:text-text-dark mb-4">Image de couverture</h3>
+<div class="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-border-light dark:border-border-dark p-6 text-center">
+<span class="material-symbols-outlined text-4xl text-muted-light dark:text-muted-dark">upload_file</span>
+<p class="mt-2 text-sm text-muted-light dark:text-muted-dark">
+<span class="font-semibold text-primary">Cliquez pour télécharger</span> ou glissez-déposez
+              </p>
+<p class="text-xs text-muted-light dark:text-muted-dark/70">PNG, JPG, GIF jusqu'à 10MB</p>
+</div>
+<div class="mt-4">
+<label class="text-xs font-medium text-muted-light dark:text-muted-dark" for="image-url">Ou coller une URL d'image</label>
+<input class="form-input mt-1 w-full rounded-md text-sm border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:ring-primary focus:border-primary" id="image-url" placeholder="https://..." value=""/>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

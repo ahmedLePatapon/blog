@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ModernBlog - The Art of Minimalist Design</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", 
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#E5E7EB] dark:border-gray-800 px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-[#111827] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111827] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">ModernBlog</h2>
+</div>
+<div class="hidden sm:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#111827] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-[#111827] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">All Articles</a>
+<a class="text-[#111827] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">About</a>
+</div>
+</div>
+</header>
+<main class="mt-8 sm:mt-12 md:mt-16 px-4">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-start gap-3 p-4">
+<h1 class="text-[#111827] dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">The Art of Minimalist Design in Modern Web Development</h1>
+</div>
+<!-- ListItem (Author Byline) -->
+<div class="flex items-center gap-4 px-4 min-h-14 justify-start mt-4">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-10 w-10" data-alt="Author avatar for Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGZ5AXWQYyxHHmL50ECPYafLFDghvna2egsG65i_mt5F_gWi4-qG83A4BtcjUM44oipW7oif7VJWdPAXrCaXM_ltR86FPQZx99eVjQVSSsZybtqsAAnwdF6Pa7zKwJ-ipc9XbbF9_Vw81LoqIlveRCRlgiIA9taPs4QDNfezdAwJKATbM8nhf0LTTg8-81rQWNl6t8nlVMG6qCVQvOdj-rJRruxYL3_cXX25WsCeuJCsOVxBJ_KBCJyfELqRhtMzS4OzzJQWWkf_4");'></div>
+<p class="text-[#111827] dark:text-gray-200 text-base font-medium leading-normal flex-1 truncate">Jane Doe</p>
+</div>
+<div class="shrink-0">
+<p class="text-[#6B7280] dark:text-gray-400 text-sm font-normal leading-normal">October 26, 2023</p>
+</div>
+</div>
+<!-- HeaderImage -->
+<div class="@container mt-8">
+<div class="@[480px]:px-4 @[480px]:py-3">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden @[480px]:rounded-xl min-h-80 md:min-h-96" data-alt="Abstract gradient flowing from light blue to soft pink, representing modern design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkyPsX58apYr4ELXkm9yh44XxGzf6gGRWBo4Q9XqK-_52y-gXR4FeBZvgPG6WMJLsCvVk1Pj7BxoL3cRazIcwAFdBvXVzNxz_EaNdr4TbLiCHxOt-HVsBJDah2emANVNthGe-aha3A554-cyiskVl4e7hHhlo0avAm_OLuhIor9zqQPynekkHK85wui88Bd2iybsl8q6ttc6wgSF53ZocQBip3_DWp9vPRzu87EFamarVp3BQwAT5M1XThyainGpO-92myvG8RSsc");'></div>
+</div>
+</div>
+<!-- BodyText -->
+<article class="prose prose-lg dark:prose-invert max-w-none px-4 py-8 text-[#111827] dark:text-gray-300 text-base font-normal leading-relaxed">
+<p>
+                                In the ever-evolving landscape of web design, a powerful trend has emerged and solidified its place: minimalist design. This approach, characterized by its simplicity, clarity, and focus on essential elements, is more than just an aesthetic choice; it's a philosophy that prioritizes user experience and content. Inspired by platforms like Vercel, Notion, and Medium, modern developers are embracing minimalism to create digital experiences that are not only beautiful but also highly functional and performant.
+                            </p>
+<p>
+                                The core principle of minimalist design is to strip away the superfluous. Every element on the page must serve a purpose. This means generous white space, a limited and intentional color palette, and clean, readable typography. By removing distractions, we guide the user's attention directly to the content, making the information easier to consume and understand.
+                            </p>
+<blockquote>
+<p>Simplicity is the ultimate sophistication.</p>
+<cite>— Leonardo da Vinci</cite>
+</blockquote>
+<h2>Key Principles in Practice</h2>
+<ul>
+<li><strong>Negative Space:</strong> Also known as white space, this is the area around elements. It's not empty space; it's an active element that creates hierarchy and improves legibility.</li>
+<li><strong>Limited Color Palette:</strong> A minimalist design often uses a monochromatic or very limited color scheme. Accents are used sparingly to draw attention to key actions, like buttons or links.</li>
+<li><strong>Typography as a Focal Point:</strong> With fewer visual elements, typography becomes crucial. Choosing a clean, readable font and establishing a clear hierarchy with size and weight is essential.</li>
+</ul>
+<p>
+                                Adopting minimalism doesn't mean creating a boring design. It's about intentionality and precision. By focusing on what truly matters, we can build web experiences that are not only faster and more accessible but also more elegant and enjoyable for the user.
+                            </p>
+<pre><code class="language-css">body {
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+    background-color: #FFFFFF;
+    line-height: 1.6;
+}</code></pre>
+</article>
+<!-- Related Articles Section -->
+<section class="mt-16 px-4">
+<h2 class="text-2xl font-bold text-[#111827] dark:text-white mb-6">Articles liés</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Related Article Card 1 -->
+<a class="group flex flex-col gap-4" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover overflow-hidden rounded-lg" data-alt="Geometric patterns in shades of gray and white" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC28plCWh_m9WVumswyjUh8BYbPWOnCKq25nL5z52S5Y38AZUDHD-FvuQPL6vomAsePU5Jjx7LwXBAzhyEjAksQMo5b0w3b-XNRlb-wKOLd56ZY_9sbhEQ-Y5fyOn2BUPUd5jWyr5mjgtIm5kVc1Ss36yTlggwJFmZAzQW3D_Zjo9YvxoPVCS1yxdxuyVJd5GWeLKnX7IMWPrdRNemPSaGF0tayF2oO0-v5ugi5ZHb5Crr3wgAAWO_r91oMhzsgH8GDhiNoGycs9FU");'></div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-[#111827] dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">Understanding Component-Based Architecture</h3>
+<p class="text-[#6B7280] dark:text-gray-400 text-sm">A deep dive into building scalable and maintainable UIs.</p>
+</div>
+</a>
+<!-- Related Article Card 2 -->
+<a class="group flex flex-col gap-4" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover overflow-hidden rounded-lg" data-alt="A person typing on a laptop with code on the screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBF1-NO2D-q2kfRB8m2NgOLyVS3vjHyz9wnfHXW2sUzddR25YVznyYzp5U4Ai-OMOAbQolGCltf3RZ-TGWJeOmGF6kqPg_6nVh3crf9hCCW9GNi4bi3-d9_S7eqx3aNkWqyTRO49PhyLwnupme5isXr3xwAXwdkRx9FJESZPi8VdaN5K5EII9cCt9n71fqlpD2be18m52nIKBI8C8VRTaW6c86pY9ttPikAZjgqPEQtmcM_Xx0kiAOfIX2GXzBgPrLBG4rLjym7gxA");'></div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-[#111827] dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">The Rise of Server-Side Rendering</h3>
+<p class="text-[#6B7280] dark:text-gray-400 text-sm">How Next.js is changing the game for web performance.</p>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-24 border-t border-solid border-[#E5E7EB] dark:border-gray-800 px-4 sm:px-10 py-8">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+<p class="text-sm text-[#6B7280] dark:text-gray-400">© 2024 ModernBlog. All rights reserved.</p>
+<div class="flex items-center gap-4">
+<a class="text-[#6B7280] dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-[#6B7280] dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-[#6B7280] dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.019c0 4.435 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.019C22 6.477 17.523 2 12 2Z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

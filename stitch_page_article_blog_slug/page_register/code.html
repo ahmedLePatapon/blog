@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Créer un compte</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+      body {
+        @apply font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200;
+      }
+      .form-input {
+        @apply flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 h-12 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-3 text-base font-normal leading-normal text-slate-800 dark:text-slate-200;
+        @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary;
+      }
+      .form-label {
+        @apply text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2;
+      }
+    </style>
+</head>
+<body class="antialiased">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4 sm:p-6">
+<div class="w-full max-w-md space-y-8">
+<div class="flex flex-col items-center space-y-4">
+<svg aria-hidden="true" class="h-8 w-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<div class="flex flex-col items-center gap-2">
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-tight">Créer un compte</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">
+                        Déjà un compte ?
+                        <a class="font-medium text-primary hover:text-primary/80 transition-colors" href="#">Se connecter</a>
+</p>
+</div>
+</div>
+<div class="w-full rounded-xl bg-white dark:bg-slate-900/50 p-6 sm:p-8 shadow-sm border border-slate-200 dark:border-slate-800">
+<form class="flex flex-col gap-6">
+<div class="flex flex-col gap-4">
+<label class="flex flex-col">
+<p class="form-label">Adresse e-mail</p>
+<div class="relative flex w-full flex-1 items-center">
+<span aria-hidden="true" class="material-symbols-outlined absolute left-3 text-slate-400 dark:text-slate-500">mail</span>
+<input class="form-input pl-10" placeholder="nom@exemple.com" type="email" value=""/>
+</div>
+</label>
+<label class="flex flex-col">
+<p class="form-label">Mot de passe</p>
+<div class="relative flex w-full flex-1 items-center">
+<span aria-hidden="true" class="material-symbols-outlined absolute left-3 text-slate-400 dark:text-slate-500">lock</span>
+<input class="form-input pl-10 pr-10" placeholder="••••••••" type="password" value=""/>
+<button aria-label="Afficher le mot de passe" class="absolute right-3 text-slate-400 dark:text-slate-500" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</label>
+<label class="flex flex-col">
+<p class="form-label">Confirmer le mot de passe</p>
+<div class="relative flex w-full flex-1 items-center">
+<span aria-hidden="true" class="material-symbols-outlined absolute left-3 text-slate-400 dark:text-slate-500">lock</span>
+<input class="form-input pl-10 pr-10" placeholder="••••••••" type="password" value=""/>
+<button aria-label="Afficher le mot de passe" class="absolute right-3 text-slate-400 dark:text-slate-500" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</label>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark transition-colors">
+<span class="truncate">Créer un compte</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</body></html>

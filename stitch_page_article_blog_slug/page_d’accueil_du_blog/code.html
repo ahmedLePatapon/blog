@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MyBlog - A Modern Blog for Today's Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4299E1", // Muted Blue as per request
+            "background-light": "#F9F9F9",
+            "background-dark": "#101622",
+            "text-primary-light": "#1A202C",
+            "text-primary-dark": "#F7FAFC",
+            "text-secondary-light": "#718096",
+            "text-secondary-dark": "#A0AEC0",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-5xl px-4 md:px-8">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200/80 dark:border-gray-800/80 py-4">
+<div class="flex items-center gap-3">
+<div class="text-primary size-7">
+<svg fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path></svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">MyBlog</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors" href="#">Blog</a>
+<a class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors" href="#">Dashboard</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[-0.01em] hover:opacity-90 transition-opacity">
+<span class="truncate">Login</span>
+</button>
+</div>
+</header>
+<!-- HeroSection -->
+<main class="flex-grow">
+<div class="flex flex-col items-center justify-center text-center py-20 md:py-32">
+<div class="flex flex-col gap-4 max-w-2xl">
+<h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-text-primary-light dark:text-text-primary-dark">
+                  A Modern Blog for Today's Developer
+                </h1>
+<h2 class="text-base sm:text-lg text-text-secondary-light dark:text-text-secondary-dark">
+                  Exploring the latest trends in technology, design, and software development.
+                </h2>
+</div>
+</div>
+<!-- SectionHeader -->
+<div class="py-10">
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary-light dark:text-text-primary-dark">Derniers articles</h2>
+</div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="flex flex-col gap-4 group">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-gray-200 dark:bg-gray-800" data-alt="Abstract gradient from blue to purple" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB18ZIEhy9Xasri7m_0N7qeIW_pjX-uQRnucYQURcmONx8erPJ0z7XO7RuKTNp_nzpf4HJntBQwY01NH0aG20y6_MlQk-5dYeUqnvPL8cjzJsvLJU49o5DAtS5OKOhhdWyatVOqVJMWZoz-rSuE54maKgwpK8TaKFFRd99Sg2eYqTZ9lKmJK2Jv9oiv_EjL7Ip_Bc6-N5MK9Kgj2FKTsnK37Aj1IzhiO0A-ez_EMKVykMlpU28GJiV6jAY-wUlrwaczv4FdLvjS8OU");'></div>
+<div>
+<h3 class="text-lg font-bold leading-snug text-text-primary-light dark:text-text-primary-dark">Building a Component Library with Next.js</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mt-1">A deep dive into creating reusable and scalable UI components for your projects.</p>
+<a class="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3 group-hover:underline" href="#">
+                    Lire l'article <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 group">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-gray-200 dark:bg-gray-800" data-alt="Abstract gradient from green to yellow" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzcd_Vdwao8gwtmQFCwv_uoQ2o2NasM2Z0AWAQg_iK6RAo_fLcTZyDGFCeG02DM1BXWAgmZUXyP4FVgNv8YLSQwbxl-H7L6mVz-vt0h48N5IIfkvjyMXuwIm7HdipfPoR7UOW2_gWo6q-bMSwZK9fRzb7MT9IZ_Q_Cw7kSQTrPcmvrWwBXEWDuS9LRJekr406TgVRa6HWXeZ7nr0wpMEO0ndAV49TqPtJNtkWxbhYpe4ctHCBRKOGd26pONvApQ2kYtZaDJrs9g_w");'></div>
+<div>
+<h3 class="text-lg font-bold leading-snug text-text-primary-light dark:text-text-primary-dark">The Art of Minimalist UI Design</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mt-1">Discover principles and techniques to create clean, elegant, and user-friendly interfaces.</p>
+<a class="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3 group-hover:underline" href="#">
+                    Lire l'article <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 group">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-gray-200 dark:bg-gray-800" data-alt="Abstract gradient from red to orange" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3g7YOiNpCD7kXjM5RWJwEPV-05TGHCjrBzMtIhX-QQb0MtAtrEOq0PJM9LSETnygyjpRuhU7MfIwCLZXqeDM4mGydzOHU7od4UeFVud0fyNEOZhbsl8lswgBwIrmAc6hgCsnSIR2uAPaI3LVSqgeeELIQCXHCGVRFVQbUCymPq8cW1ZIAeW1gXsEyjayGOR9Gfu6YsXewA2Y5AVH4UYC1kvl4viINdAGIdCO673tSBEiNa7dQVaL3PvSP6hw1USLOwS26V2bmtT8");'></div>
+<div>
+<h3 class="text-lg font-bold leading-snug text-text-primary-light dark:text-text-primary-dark">State Management in Modern Web Apps</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm mt-1">An overview of popular state management solutions and how to choose the right one for you.</p>
+<a class="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3 group-hover:underline" href="#">
+                    Lire l'article <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col sm:flex-row items-center justify-between gap-6 py-10 mt-20 border-t border-solid border-gray-200/80 dark:border-gray-800/80 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<p>© 2024 MyBlog. All rights reserved.</p>
+<div class="flex items-center gap-4">
+<a class="hover:text-primary transition-colors" href="#">
+<!-- I will use a custom SVG for twitter/X as Material Symbols does not have it -->
+<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"></path>
+</svg>
+</a>
+<a class="hover:text-primary transition-colors" href="#">
+<!-- I will use a custom SVG for GitHub as Material Symbols does not have it -->
+<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

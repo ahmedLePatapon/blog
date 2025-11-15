@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog CMS Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        tr:hover .action-icons {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111827] dark:text-gray-200">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-[#18202f] p-4 flex flex-col justify-between border-r border-gray-200 dark:border-gray-800">
+<div class="flex flex-col gap-6">
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Company Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBUeXHAQq_2VytGaaQC71XpZcEuxgghQu-5TZ6hx2AU69_4rWHVdnHihouTD8WJLqgZTQb_6cg3MxOwPi-CoYJefND89lB0cBuZUgVW4VMEzvDPdqiCTiyI0GtiWWk1Kf7B9UOW-Qov1qZR9qYPglJZTnRfEOA771laMsiA7ZyHAA3FdDcZ_KTCa75fxTr4TDTTsJy9kv4bGVwYPMikTK0NaJIrRZa8oEwlpc7EzCCipY360Bm_iT7ds_bsuQiI5Y4H6Ftwmuo6V_g");'></div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-normal text-gray-900 dark:text-white">Blog CMS</h1>
+<p class="text-sm font-normal leading-normal text-gray-500 dark:text-gray-400">Next.js Project</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded bg-primary/10 text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined">article</span>
+<p class="text-sm font-bold leading-normal">Articles</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded" href="#">
+<span class="material-symbols-outlined">perm_media</span>
+<p class="text-sm font-medium leading-normal">Media</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors">
+<span class="truncate">View Public Site</span>
+</button>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="max-w-7xl mx-auto flex flex-col gap-6">
+<!-- PageHeading -->
+<header class="flex flex-wrap justify-between items-center gap-3">
+<h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Articles</h1>
+<button class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer overflow-hidden rounded h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+<span class="truncate">Nouvel Article</span>
+</button>
+</header>
+<!-- SearchBar -->
+<div class="w-full">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-500 dark:text-gray-400 flex bg-white dark:bg-[#18202f] items-center justify-center pl-4 rounded-l-lg border border-r-0 border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-l-0 border-gray-200 dark:border-gray-700 bg-white dark:bg-[#18202f] h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 pl-2 text-base font-normal leading-normal" placeholder="Rechercher un article..." value=""/>
+</div>
+</label>
+</div>
+<!-- Table -->
+<div class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#18202f]">
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="bg-gray-50 dark:bg-gray-900/50">
+<tr>
+<th class="px-6 py-4 font-medium text-gray-500 dark:text-gray-400" scope="col">Titre</th>
+<th class="px-6 py-4 font-medium text-gray-500 dark:text-gray-400" scope="col">État</th>
+<th class="px-6 py-4 font-medium text-gray-500 dark:text-gray-400" scope="col">Date</th>
+<th class="px-6 py-4 font-medium text-gray-500 dark:text-gray-400 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 group">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Lancement de notre nouveau produit</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">
+                                            Publié
+                                        </span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">15 Octobre 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500 rounded-md hover:bg-red-500/10 dark:hover:bg-red-500/20">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 group">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Guide du débutant pour Next.js</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">
+                                            Publié
+                                        </span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">28 Septembre 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500 rounded-md hover:bg-red-500/10 dark:hover:bg-red-500/20">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 group">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Les secrets d'un design minimaliste</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                                            Brouillon
+                                        </span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">05 Septembre 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500 rounded-md hover:bg-red-500/10 dark:hover:bg-red-500/20">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 group">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Pourquoi nous avons choisi Vercel</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300">
+                                            Brouillon
+                                        </span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">12 Août 2023</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-md hover:bg-primary/10 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500 rounded-md hover:bg-red-500/10 dark:hover:bg-red-500/20">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Pagination -->
+<nav class="flex items-center justify-center p-4">
+<a class="flex size-10 items-center justify-center text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">chevron_left</span>
+</a>
+<a class="text-sm font-bold flex size-10 items-center justify-center rounded-full text-white bg-primary" href="#">1</a>
+<a class="text-sm font-normal flex size-10 items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">2</a>
+<a class="text-sm font-normal flex size-10 items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">3</a>
+<span class="text-sm font-normal flex size-10 items-center justify-center text-gray-500 dark:text-gray-400">...</span>
+<a class="text-sm font-normal flex size-10 items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">8</a>
+<a class="text-sm font-normal flex size-10 items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">9</a>
+<a class="text-sm font-normal flex size-10 items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">10</a>
+<a class="flex size-10 items-center justify-center text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">chevron_right</span>
+</a>
+</nav>
+</div>
+</main>
+</div>
+</body></html>

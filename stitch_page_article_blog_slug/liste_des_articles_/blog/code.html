@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eleganza CMS - Articles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "surface-light": "#ffffff",
+              "surface-dark": "#181f2b",
+              "text-primary-light": "#111827",
+              "text-primary-dark": "#f9fafb",
+              "text-secondary-light": "#6b7280",
+              "text-secondary-dark": "#9ca3af",
+              "border-light": "#e5e7eb",
+              "border-dark": "#374151",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex-shrink-0 w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark">
+<div class="flex h-full min-h-[700px] flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Abstract company logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBh8Lk1ZLanvKbNCLH9QhDQUQ6zAQQu7qJSHBnMdtEWlaQIEm54W4XgvY1bvwg2BK0-bK4AXjH00tlIKLpqjnwQ3AROlj5l7twYaJ3XRw8NAJpg7EQ3RK-1KE3qLGeTGz2fdETAGSLO4azS_TQDDQ0Y0FbvzcLl5u0drFVMSiTW5_J3tlgncqIlnaJEA8rcJu1TKaufDXvhlZhfWh7jVzyj9KKgpf4347pHtXm5hceTiq0JwtHnfXehF3dcox4Gsa652aCMsPwHuNs");'></div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-normal">Eleganza CMS</h1>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">Modern Blog</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">article</span>
+<p class="text-sm font-medium leading-normal">Content</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">group</span>
+<p class="text-sm font-medium leading-normal">Subscribers</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">analytics</span>
+<p class="text-sm font-medium leading-normal">Analytics</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">New Article</span>
+</button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">help</span>
+<p class="text-sm font-medium leading-normal">Help</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-4 sm:p-6 lg:p-10">
+<div class="w-full max-w-7xl mx-auto">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-4 items-center mb-6">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em]">Articles</p>
+</div>
+<!-- Toolbar: Search, Filters, CTA -->
+<div class="flex flex-col md:flex-row gap-4 items-center mb-6">
+<!-- SearchBar -->
+<div class="flex-grow w-full md:w-auto">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark focus-within:ring-2 focus-within:ring-primary">
+<div class="text-text-secondary-light dark:text-text-secondary-dark flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-primary-light dark:text-text-primary-dark focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark px-2 text-base font-normal leading-normal" placeholder="Search articles..." value=""/>
+</div>
+</label>
+</div>
+<!-- SegmentedButtons -->
+<div class="flex-shrink-0">
+<div class="flex h-10 w-full md:w-auto items-center justify-center rounded-lg bg-background-light dark:bg-surface-dark p-1 border border-border-light dark:border-border-dark">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-surface-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-text-primary-light dark:has-[:checked]:text-text-primary-dark text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">
+<span class="truncate">All</span>
+<input checked="" class="invisible w-0" name="article-filter" type="radio" value="All"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-surface-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-text-primary-light dark:has-[:checked]:text-text-primary-dark text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">
+<span class="truncate">Published</span>
+<input class="invisible w-0" name="article-filter" type="radio" value="Published"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-surface-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-text-primary-light dark:has-[:checked]:text-text-primary-dark text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">
+<span class="truncate">Draft</span>
+<input class="invisible w-0" name="article-filter" type="radio" value="Draft"/>
+</label>
+</div>
+</div>
+</div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="flex flex-col gap-3 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark hover:shadow-md transition-shadow">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract colorful gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJtH-0fKeZRah6UGBwxSq9NZ7fNNpvtq2jBfm8jbGKnGM4kQ_EqitLGCjAoEO7PGbcx036MZini9x5wFpSfISq-pjopxkD4hRAKDwf7OFcjBDjWj2EKQTLwLbnyA33i1nj70TF0sDTQr0vzc7HPE1fQjKTJOBo7m0HEnzvrLWhoUArJrFBmpVQ6FRl0-5jHWFqtdegFPyQ66aZWGkK20T5-L0OfX4quudtDClapwp1mpHPN7f8X_qZdPc0ZzBFjlscOQBuIobLvx4");'></div>
+<div class="flex-grow">
+<p class="text-base font-semibold leading-normal">The Art of Minimalist Design</p>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark mt-1">Last updated on Jan 15, 2024</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">Published</span>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors rounded-full p-1">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark hover:shadow-md transition-shadow">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Geometric blue and purple pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCi8jTXw9WAOGbXab8rkQROF3jb6YRNYmb3w32K2dTyd_ubOa3ObYs4xS7NPR4D0ECHBSjB_0EvRoAJgc1-yEUxhGaWbbUYrz_kl0pFk0QN8JlGw5C7pfJqJOdf10yK7KMbktnEuzp5oDzT2Z5-xoE4My--rdXX1VHLc1FTLAJe8NLrAw6JtK387VYn-Ix35gZd_mxwgrNpx6tmSuYm06J4AXWNcdEmOndFZQUz9kEs4jmc4NSMmDnEpeJ6ox0JGMELjN6Nc-IEc6s");'></div>
+<div class="flex-grow">
+<p class="text-base font-semibold leading-normal">Next.js 14: A Deep Dive</p>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark mt-1">Last updated on Jan 14, 2024</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-300">Draft</span>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors rounded-full p-1">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark hover:shadow-md transition-shadow">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Soft pink and orange abstract shapes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB322xmMAeP8B-AGzv_aRk7FiWp7BMVErqQ2BpT3Orq1gHZ5whEFgNR7ESkbaaC6Kf2DNNTvRntCzhoaKL_bAIZpJZAFdXWoMM1AYjlmqCChKoGIPzdjzcyhWv8N0J4Jo_HI4wrFUoQV_TgB0p_f1mytsO4yk13CKE2ZNLBn5vSJeuVIJeFQGRR2nt6-UdExuUv7KIY2fUbYeqhL8cPgQGTSE0Qio9mtJULYpM2cAW-_lgkC3EBOZC3nvVeevzZCxAKRXtiOh-Kv84");'></div>
+<div class="flex-grow">
+<p class="text-base font-semibold leading-normal">Building a Modern CMS</p>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark mt-1">Last updated on Jan 12, 2024</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">Published</span>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors rounded-full p-1">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark hover:shadow-md transition-shadow">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Monochromatic texture of lines" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDedBH-AiRE_zQS3nyHmCIu2E8l-DO8eYd8WklWoETv8tSt-Y1sl7__kcjoVLuPy4IQvQmpWsBYF3VNBch6SUGmGcB56ZYIMjzMRHTIrO4Zdyal81mEzB2mQQByf6rXZKw_3HhnuTxrIzsCLosHbiQalXNhuCAuVHFMPQC2UIo_ut00QNMEK5Z2qc2_gsWB4i5oWNm0XVjUP8nKhm1As8SieFl5cuqX7QiT4HdcxhWzPcka-PvNTcfXBe6Nb-IwFJmxUkgEFa9KE14");'></div>
+<div class="flex-grow">
+<p class="text-base font-semibold leading-normal">Mastering Typography on the Web</p>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark mt-1">Last updated on Jan 10, 2024</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">Published</span>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors rounded-full p-1">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark hover:shadow-md transition-shadow">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Waves of purple and blue light" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkmuCBLfMM3iNMed6GJfXRGtB4dKrBm7gtxoozv19z62RPCTUQfFEha67QOMgxigYERuWPmcHJBFFqxFdjEFU7ivH9j3K2t8qO6n32HbFeLdXzQrbBH5h9FmOBUUapfYJ1RtaeC_N--d5C41e4WsoLFQEQOP9tkysB8G3cp6Z6RBAWAZ0u18_chB29PI0heXTAK5IGsbPP5a3ddwFfAmAM6DYvFJvnTluhnDRLBNf2cUb-TZn3pyBZvQeWRImpogMwtAXPBLSf8ns");'></div>
+<div class="flex-grow">
+<p class="text-base font-semibold leading-normal">The Power of White Space</p>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark mt-1">Last updated on Jan 9, 2024</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-300">Draft</span>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors rounded-full p-1">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark hover:shadow-md transition-shadow">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Dark abstract metallic texture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRamVLC8pUdrw4EnmFjh6QQONxX3nXIirFtNCQdrksyctPKJVxxjdnfsT8bI-NHqXjAD5cwhqvJP87r8Sg7wJboPKkUoa_B13aTFwGDOqnHOJl1hiw37dWTblXGZtpJ3ibHII7w5P8N9Y5iG0-E7nxnsnXOfSj0SfPWXG-KIMkdnX2esNi0oN-QK61EFSF4zlUBGXMUbEdu3QKosQAAXxIG_60vGFdeKYr7QhxE8XnNJ86md8Igm2S2X2bJKVIoud2WP6HoJQOfOg");'></div>
+<div class="flex-grow">
+<p class="text-base font-semibold leading-normal">Crafting User-Centric Experiences</p>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark mt-1">Last updated on Jan 7, 2024</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">Published</span>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors rounded-full p-1">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between mt-8 border-t border-border-light dark:border-border-dark pt-6">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hover:bg-background-light dark:hover:bg-surface-dark/80 transition-colors">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                        Previous
+                    </button>
+<div class="hidden sm:flex items-center gap-2">
+<a class="flex items-center justify-center size-9 text-sm font-medium rounded-lg bg-primary text-white" href="#">1</a>
+<a class="flex items-center justify-center size-9 text-sm font-medium rounded-lg hover:bg-primary/10 transition-colors" href="#">2</a>
+<a class="flex items-center justify-center size-9 text-sm font-medium rounded-lg hover:bg-primary/10 transition-colors" href="#">3</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark">...</span>
+<a class="flex items-center justify-center size-9 text-sm font-medium rounded-lg hover:bg-primary/10 transition-colors" href="#">8</a>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hover:bg-background-light dark:hover:bg-surface-dark/80 transition-colors">
+                        Next
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>
