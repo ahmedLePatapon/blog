@@ -8,7 +8,7 @@
 -   [x] Configurer le fichier `schema.prisma`
 -   [x] Lancer les migrations : `npx prisma migrate dev`
 -   [x] Installer Tailwind CSS
--   [ ] Configurer `/lib/prisma.ts`
+-   [x] Configurer `/lib/prisma.ts`
 
 ## 🔐 Étape 2 --- Authentification (NextAuth)
 
