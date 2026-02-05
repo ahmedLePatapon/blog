@@ -4,27 +4,16 @@ interface Post {
     slug: string;
     content: string;
     image?: string | null;
-    published: boolean | false;
-    createdAt: Date;
-    updatedAt: Date;
+    published: boolean;
+    createdAt: Date | string;
+    updatedAt: Date | string;
     authorId: string;
-    metadata: {
-        title: string;
-        description?: string;
-        keywiords?: string[];
-        slug?: string;
-    };
 }
 
 interface PostStaticParams {
     slug: string;
+    title: string;
     content: string;
-    metadata: {
-        title: string;
-        description?: string;
-        keywiords?: string[];
-        slug?: string;
-    };
     image?: string | null;
 }
 

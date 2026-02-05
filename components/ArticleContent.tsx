@@ -9,10 +9,9 @@ export default function ArticleContent({ content, className = '' }: ArticleConte
 
     return (
         <article
-            className={`prose prose-lg dark:prose-invert max-w-none px-4 py-8 text-[#111827] dark:text-gray-300 text-base font-normal leading-relaxed ${className}`}
+            className={`prose prose-lg dark:prose-invert max-w-none prose-headings:text-text-primary-light dark:prose-headings:text-text-primary-dark prose-p:text-text-secondary-light dark:prose-p:text-text-secondary-dark prose-a:text-primary prose-strong:text-text-primary-light dark:prose-strong:text-text-primary-dark ${className}`}
         >
-            markdown content here: {content}
-            {/* <CustomMDX source={content} /> */}
+            <CustomMDX source={content} />
         </article>
     );
 }

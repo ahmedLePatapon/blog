@@ -40,7 +40,7 @@ export default async function Page() {
 
             </main>
 
-            <Footer />x
+            <Footer />
 
           </div>
         </div>

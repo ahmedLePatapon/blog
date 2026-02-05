@@ -4,7 +4,12 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
 
-function Table({ data }) {
+interface TableData {
+    headers: string[];
+    rows: string[][];
+}
+
+function Table({ data }: { data: TableData }) {
     let headers = data.headers.map((header, index) => (
         <th key={index}>{header}</th>
     ))
@@ -26,8 +31,8 @@ function Table({ data }) {
     )
 }
 
-function CustomLink(props) {
-    let href = props.href
+function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+    let href = props.href || ''
 
     if (href.startsWith('/')) {
         return (
@@ -44,11 +49,18 @@ function CustomLink(props) {
     return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-function RoundedImage(props) {
-    return <Image alt={props.alt} className="rounded-lg" {...props} />
+interface RoundedImageProps {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
 }
 
-function Code({ children, ...props }) {
+function RoundedImage(props: RoundedImageProps) {
+    return <Image alt={props.alt} className="rounded-lg" {...props} width={props.width || 800} height={props.height || 600} />
+}
+
+function Code({ children, ...props }: { children: string } & React.HTMLAttributes<HTMLElement>) {
     let codeHTML = highlight(children)
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
@@ -99,11 +111,12 @@ let components = {
     Table,
 }
 
-export async function CustomMDX(props) {
-    console.log('**********************');
-    // console.log('compileMDX', MDXRemote(source: props.source, components: props.components));
-    console.log('props', props);
-    console.log('**********************');
+interface CustomMDXProps {
+    source: string;
+    components?: Record<string, React.ComponentType<any>>;
+}
+
+export async function CustomMDX(props: CustomMDXProps) {
     return (
         <MDXRemote
             {...props}
